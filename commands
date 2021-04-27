@@ -1,0 +1,10 @@
+DBCC CHECKIDENT('PalpiteLoteca', RESEED, 0) --reset identity
+
+--
+BEGIN TRANSACTION;
+UPDATE table
+SET col = 'something'
+WHERE col2 = 'something else';
+COMMIT;
+ROLLBACK;
+--
