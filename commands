@@ -1,4 +1,4 @@
-DBCC CHECKIDENT('PalpiteLoteca', RESEED, 0) --reset identity
+DBCC CHECKIDENT('TableName', RESEED, 0) --reset identity
 
 --
 BEGIN TRANSACTION;
