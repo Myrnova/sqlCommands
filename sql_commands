@@ -8,3 +8,4 @@ WHERE col2 = 'something else';
 COMMIT;
 ROLLBACK;
 --
+COLLATE Latin1_General_CI_AI LIKE
