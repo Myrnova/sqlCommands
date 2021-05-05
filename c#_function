@@ -4,6 +4,13 @@ using System.Transactions;
 using TransactionScope scope = new TransactionScope(); --used to not complete a sql transaction if any error is throw in the middle, will only be completed and commited if it hits scope.complete
 scope.Complete();
 --
+myFloatVariable.ToString("0.00"); //2dp Number
+
+myFloatVariable.ToString("n2"); // 2dp Number
+
+myFloatVariable.ToString("c2"); // 2dp currency with currency symbol
+--
+
 ----Dapper------
 
 var teste = connection.Query<Model1, Model2, Model3, ModelReturned>(sql, (auxModel1, auxModel2, auxModel3) =>
