@@ -1,14 +1,47 @@
 list.Skip(1) -- skip first item of the list
---
+
+-- Rollback if any error is thrown
 using System.Transactions;
 using TransactionScope scope = new TransactionScope(); --used to not complete a sql transaction if any error is throw in the middle, will only be completed and commited if it hits scope.complete
 scope.Complete();
---
+
+-- Float to string examples
 myFloatVariable.ToString("0.00"); //2dp Number
 
 myFloatVariable.ToString("n2"); // 2dp Number
 
 myFloatVariable.ToString("c2"); // 2dp currency with currency symbol
+
+-- Add custom class function to IServiceCollection
+public static class ServiceCollectionExtensions
+{
+   public static IServiceCollection AddInfrastructure(this IServiceCollection services)
+   {
+       services.AddScoped<IEmployeeRepository, EmployeeRepository>();         
+
+       return services;
+   }
+
+   public static IServiceCollection AddApplication(this IServiceCollection services)
+   {
+       services.AddScoped<IEmployeeService, EmployeeService>();        
+
+       return services;
+   }
+}
+public void ConfigureServices(IServiceCollection services)
+   {
+       services
+           .AddApplication()
+           .AddInfrastructure();
+
+       services.AddControllers();
+
+       services.AddSwaggerGen(c =>
+       {
+           c.SwaggerDoc("v1", new OpenApiInfo { Title = "ArtigoBoasPraticas.API", Version = "v1" });
+       });
+   }
 --
 
 ----Dapper------
