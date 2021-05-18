@@ -5,6 +5,10 @@ using System.Transactions;
 using TransactionScope scope = new TransactionScope(); --used to not complete a sql transaction if any error is throw in the middle, will only be completed and commited if it hits scope.complete
 scope.Complete();
 
+-- Thread stackoverflow
+
+https://stackoverflow.com/questions/18219880/showdialog-and-ui-interaction-in-backgroundworker-thread
+
 -- Float to string examples
 myFloatVariable.ToString("0.00"); //2dp Number
 
