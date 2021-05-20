@@ -8,6 +8,7 @@ scope.Complete();
 -- Thread stackoverflow
 
 https://stackoverflow.com/questions/18219880/showdialog-and-ui-interaction-in-backgroundworker-thread
+https://www.csharp-examples.net/create-new-thread/#:~:text=First%2C%20create%20a%20new%20ThreadStart,Finally%2C%20call%20the%20Thread.
 
 -- Float to string examples
 myFloatVariable.ToString("0.00"); //2dp Number
