@@ -17,6 +17,10 @@ myFloatVariable.ToString("n2"); // 2dp Number
 
 myFloatVariable.ToString("c2"); // 2dp currency with currency symbol
 
+-- String
+
+.PadLeft(2, '0') //add zero in the second position of the string if is empty starting counting on the left
+
 -- Add custom class function to IServiceCollection
 public static class ServiceCollectionExtensions
 {
