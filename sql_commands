@@ -9,3 +9,7 @@ COMMIT;
 ROLLBACK;
 --
 COLLATE Latin1_General_CI_AI LIKE
+
+--
+
+ALTER TABLE Veiculo add Constraint UK_Veiculo_Placa unique (placa) --make a column unique
