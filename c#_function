@@ -59,6 +59,6 @@ var teste = connection.Query<Model1, Model2, Model3, ModelReturned>(sql, (auxMod
  {
  return Model1;
 },
- splitOn: "Duplos, Localizacao") --where dapper should split the result of the sql to set it to a model, should always use the next element after the one you want to split
-                                 -- e. duplos starts Model2 and before it there are the elements of Model1, so to get the Model1 is necessary to split on the first element of the next model
+ splitOn: "ColName1, ColName2") --where dapper should split the result of the sql to set it to a model, should always use the next element after the one you want to split
+                                 -- e. colname1 starts Model2 and before it there are the elements of Model1, so to get the Model1 is necessary to split on the first element of the next model
 .ToList();
