@@ -1,6 +1,6 @@
 DBCC CHECKIDENT('TableName', RESEED, 0) --reset identity
 
---
+-- Begin a transaction without comminting to test the query
 BEGIN TRANSACTION;
 UPDATE table
 SET col = 'something'
@@ -8,17 +8,18 @@ WHERE col2 = 'something else';
 COMMIT;
 ROLLBACK;
 --
+
 COLLATE Latin1_General_CI_AI LIKE
 
 --
 
-ALTER TABLE Veiculo add Constraint UK_Veiculo_Placa unique (placa) --make a column unique
+ALTER TABLE TableName add Constraint UK_TableName_ColName unique (colname) --make a column have unique values
 
 -- Get a inserted id directed to a variable without using scope_identity
 DECLARE  @outputID Table(id int)
-INSERT INTO TableTest(test1, test2) OUTPUT inserted.ID INTO @outputID  
-                                             VALUES (@test1, @test2)
+INSERT INTO TableName(col1, col2) OUTPUT inserted.ID INTO @outputID  
+                                             VALUES (@col1, @col2)
                                              
 -- Insert into a table using a second table or variable as table
-INSERT INTO TestTable(test1, test2) SELECT test1, test2 from @variableTable
+INSERT INTO TableName(col1, col2) SELECT col1, col2 from @variableTable
 			
