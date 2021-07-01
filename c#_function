@@ -62,3 +62,20 @@ var teste = connection.Query<Model1, Model2, Model3, ModelReturned>(sql, (auxMod
  splitOn: "ColName1, ColName2") --where dapper should split the result of the sql to set it to a model, should always use the next element after the one you want to split
                                  -- e. colname1 starts Model2 and before it there are the elements of Model1, so to get the Model1 is necessary to split on the first element of the next model
 .ToList();
+
+ using (var valores = connection.QueryMultiple("PROCEDURE", parametros, commandType: CommandType.StoredProcedure))
+                {
+
+                    var valor1 = valores.ReadFirstOrDefault<Valores1>();
+                    var valor2 = valores.ReadFirstOrDefault<Valores2>();
+                    if (valor1 != null)
+                        return valor1;
+
+                    if (valor2 != null)
+                        return valor2;
+
+                    return new Exception("Valor não encontrado");
+                }
+
+
+
