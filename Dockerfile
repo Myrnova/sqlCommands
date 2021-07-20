@@ -14,22 +14,19 @@ WORKDIR /app/
 
 FROM build-env AS publish
 
-RUN  cd ClickJogos.Desktop.WebCore/ && npm install && dotnet publish -c Release -o out
+RUN  cd Programa && npm install && dotnet publish -c Release -o out
 
-WORKDIR /app/ClickJogos.Desktop.WebCore/
+WORKDIR /app/Programa/
 
-ENV ASPNETCORE_ENVIRONMENT=Development \
-    TZ=America/Sao_Paulo
+ENV ASPNETCORE_ENVIRONMENT=Development
 
 
 FROM mcr.microsoft.com/dotnet/core/aspnet:2.1 AS base
 
 FROM base AS final
 
-COPY --from=publish /app/ClickJogos.Desktop.WebCore/out .
+COPY --from=publish /app/Programa/out .
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime
 
-ENTRYPOINT ["dotnet", "ClickJogos.Desktop.WebCore.dll"]
-
-#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
+ENTRYPOINT ["dotnet", "Programa.dll"]
