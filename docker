@@ -1,0 +1,3 @@
+docker builder prune -- remove all build cache
+docker rmi -f $(docker images -a -q) -- delete all images linux build
+docker images -a -q | % { docker image rm $_ -f } -- delete all images powershell
