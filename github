@@ -1,0 +1,17 @@
+git checkout -b "branch-name" // create new branch
+
+git status
+
+git remote // get remote branch name
+
+git push origin "your-branch-name"
+
+git remote add "branch-name" "link-to-repository" // add a repository to a branch
+
+git fetch "branch-name" // donwload from the command above
+
+git merge "secondary-branch"/"main-branch"
+
+git branch -D "branch-name"  // delete branch
+
+git cherry-pick <hash of commit> // Cherry pick the commit you want
