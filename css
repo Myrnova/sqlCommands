@@ -3,10 +3,12 @@ pointer-events: none;
 
 //select and option doesn't accept :after :before
 
-
 //https://www.origamid.com/projetos/css-grid-layout-guia-completo/
 
 //https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template
 
 grid-template-columns: repeat(4, 1fr);
 grid-auto-rows: auto;
+
+//prevent text selection
+//https://www.arungudelli.com/tutorial/css/disable-text-selection-in-html-using-user-select-css-property/
