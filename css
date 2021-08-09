@@ -1,0 +1,12 @@
+//The pointer-events CSS property sets under what circumstances (if any) a particular graphic element can become the target of pointer events.
+pointer-events: none;
+
+//select and option doesn't accept :after :before
+
+
+//https://www.origamid.com/projetos/css-grid-layout-guia-completo/
+
+//https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template
+
+grid-template-columns: repeat(4, 1fr);
+grid-auto-rows: auto;

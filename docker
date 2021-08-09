@@ -1,3 +1,5 @@
 docker builder prune -- remove all build cache
 docker rmi -f $(docker images -a -q) -- delete all images linux build
 docker images -a -q | % { docker image rm $_ -f } -- delete all images powershell
+docker images --filter dangling=true #lists all images that are dangling and has no pointer to it
+docker rmi $(docker images -f "dangling=true" -q) #Removes all those images.

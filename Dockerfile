@@ -20,7 +20,6 @@ WORKDIR /app/Programa/
 
 ENV ASPNETCORE_ENVIRONMENT=Development
 
-
 FROM mcr.microsoft.com/dotnet/core/aspnet:2.1 AS base
 
 FROM base AS final
