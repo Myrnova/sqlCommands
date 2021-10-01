@@ -15,3 +15,6 @@ git merge "secondary-branch"/"main-branch"
 git branch -D "branch-name"  // delete branch
 
 git cherry-pick <hash of commit> // Cherry pick the commit you want
+
+git fetch -p //the -p or --prune argument will update the local database of remote branches.
+git remote prune origin
