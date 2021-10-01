@@ -2,7 +2,7 @@ list.Skip(1) -- skip first item of the list
 
 -- Rollback if any error is thrown
 using System.Transactions;
-using TransactionScope scope = new TransactionScope(); --used to not complete a sql transaction if any error is throw in the middle, will only be completed and commited if it hits scope.complete
+using TransactionScope scope = new TransactionScope(); --used to not complete a sql transaction if any error is throw in the middle, will only be completed and commited if hits scope.complete
 scope.Complete();
 
 -- Thread stackoverflow
@@ -48,33 +48,33 @@ public void ConfigureServices(IServiceCollection services)
 
        services.AddSwaggerGen(c =>
        {
-           c.SwaggerDoc("v1", new OpenApiInfo { Title = "ArtigoBoasPraticas.API", Version = "v1" });
+           c.SwaggerDoc("v1", new OpenApiInfo { Title = "Example.API", Version = "v1" });
        });
    }
 --
 
 ----Dapper------
 
-var teste = connection.Query<Model1, Model2, Model3, ModelReturned>(sql, (auxModel1, auxModel2, auxModel3) =>
+var test = connection.Query<Model1, Model2, Model3, ModelReturned>(sql, (auxModel1, auxModel2, auxModel3) =>
  {
  return Model1;
 },
  splitOn: "ColName1, ColName2") --where dapper should split the result of the sql to set it to a model, should always use the next element after the one you want to split
-                                 -- e. colname1 starts Model2 and before it there are the elements of Model1, so to get the Model1 is necessary to split on the first element of the next model
+                                 -- e. colname1 starts Model2 and before it there are elements of Model1, so to get the Model1 is necessary to split on the first element of the next model in this case Model2
 .ToList();
 
- using (var valores = connection.QueryMultiple("PROCEDURE", parametros, commandType: CommandType.StoredProcedure))
+ using (var values = connection.QueryMultiple("PROCEDURE", parameters, commandType: CommandType.StoredProcedure))
                 {
 
-                    var valor1 = valores.ReadFirstOrDefault<Valores1>();
-                    var valor2 = valores.ReadFirstOrDefault<Valores2>();
-                    if (valor1 != null)
-                        return valor1;
+                    var value1 = values.ReadFirstOrDefault<Values1>();
+                    var value2 = values.ReadFirstOrDefault<Values2>();
+                    if (value1 != null)
+                        return value1;
 
-                    if (valor2 != null)
-                        return valor2;
+                    if (value2 != null)
+                        return value2;
 
-                    return new Exception("Valor não encontrado");
+                    return new Exception("Value not found");
                 }
 
 
