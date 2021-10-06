@@ -1,5 +1,8 @@
 FROM mcr.microsoft.com/dotnet/core/sdk:2.1 AS build-env
 
+RUN apt update && \
+    apt upgrade openssl -y
+
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - &&\ 
     apt-get install -y nodejs &&\
     node --version && npm -version && npx -version

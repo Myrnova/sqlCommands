@@ -30,7 +30,8 @@ var officersIds = officers.map(function (officer) {
 .reduce()
 
 Just like .map(), .reduce() also runs a callback for each element of an array. What’s different here is that reduce passes the result of this callback (the accumulator) from one array element to the other.
-The accumulator can be pretty much anything (integer, string, object, etc.) and must be instantiated or passed when calling .reduce().
+The accumulator can be pretty much anything (integer, string, object, etc.) and must be instantiated or passed when calling .reduce(). We can also state which value will the accumulator initiate with passing a number after the function
+
 Time for an example! Say you have an array with these pilots and their respective years of experience:
 
 var totalYears = pilots.reduce(function (accumulator, pilot) {
@@ -45,3 +46,14 @@ What if you have an array, but only want some of the elements in it? That’s wh
 var empire = pilots.filter(function (pilot) {
   return pilot.faction === "Empire";
 });
+
+
+.slice()
+
+slice() method returns the selected element(s) in an array, as a new array object.
+
+.splice()
+
+The splice() method returns the removed item(s) in an array
+
+//https://stackoverflow.com/questions/37601282/javascript-array-splice-vs-slice
