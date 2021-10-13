@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Outline - Read & annotate without distractions</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,height=device-height"/>
+        <meta name="description" content="Outline is a free service for reading and annotating news articles. We remove the clutter so you can analyze and comment on the content." />
+        <meta name="keywords" content="clean links readable readability medium typography annotations annotate">
+
+        <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/daoolpmoieinofbnddaofhkhmbagfmnj">
+
+        <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/" lang="en">
+
+        <link rel="stylesheet" href="https://outline.com/css/outline.css?v=1.0.1" />
+        <link rel="shortcut icon" href="https://s3.amazonaws.com/static.outline.com/image/apple-icon-180x180.png" />
+
+        <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+        <script src="https://outline.com/js/modernizr.custom.js"></script>
+        <script src="https://outline.com/app.js"></script>
+
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-2748618594698147",
+            enable_page_level_ads: true
+          });
+        </script>
+    </head>
+    <body>
+        <outline-app></outline-app>
+        <script>
+            var riot = require('riot')
+            require('initialize')
+        </script>
+    </body>
+</html>
