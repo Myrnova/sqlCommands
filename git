@@ -18,3 +18,15 @@ git cherry-pick <hash of commit> // Cherry pick the commit you want
 
 git fetch -p //the -p or --prune argument will update the local database of remote branches.
 git remote prune origin
+
+
+-- git merge conflict
+//If you're already in conflicted state, and you want to just accept all of theirs:
+git checkout --theirs .
+git add .
+
+//If you want to do the opposite:
+git checkout --ours .
+git add .
+
+git pull -s recursive -X theirs <remoterepo or other repo>
