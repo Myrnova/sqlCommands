@@ -19,6 +19,9 @@ git cherry-pick <hash of commit> // Cherry pick the commit you want
 git fetch -p //the -p or --prune argument will update the local database of remote branches.
 git remote prune origin
 
+This command is useful because it allows you to undo changes without having to create a new commit. Creating a new commit to undo changes would make the history of a repository less clear. 
+You’d only be reverting a mistake and that does not usually need a commit of its own.Amending a commit does not just change a commit. It replaces it with a new commit which will have its own ID.
+git commit --amend
 
 -- git merge conflict
 //If you're already in conflicted state, and you want to just accept all of theirs:
@@ -30,3 +33,12 @@ git checkout --ours .
 git add .
 
 git pull -s recursive -X theirs <remoterepo or other repo>
+
+//If you don't want to edit the message when continuing/resuming the merge
+git merge --continue --no-edit
+
+And if you don't want to edit the message when continuing/resuming the merge:
+
+git push -f origin branch_name
+
+https://ohshitgit.com/
