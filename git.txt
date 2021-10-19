@@ -21,7 +21,11 @@ git remote prune origin
 
 This command is useful because it allows you to undo changes without having to create a new commit. Creating a new commit to undo changes would make the history of a repository less clear. 
 You’d only be reverting a mistake and that does not usually need a commit of its own.Amending a commit does not just change a commit. It replaces it with a new commit which will have its own ID.
+git commit --amend --no-edit // doesn't change message
+
 git commit --amend
+# follow prompts to change the commit message
+
 
 -- git merge conflict
 //If you're already in conflicted state, and you want to just accept all of theirs:

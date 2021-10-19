@@ -57,3 +57,20 @@ slice() method returns the selected element(s) in an array, as a new array objec
 The splice() method returns the removed item(s) in an array
 
 //https://stackoverflow.com/questions/37601282/javascript-array-splice-vs-slice
+
+    Object.defineProperties(window.HTMLElement.prototype, {
+      clientHeight: {
+        get: function () {
+          return this.tagName === 'SECTION' ? 75 : 450
+        },
+        enumerable: true,
+        configurable: true
+      }
+    })
+  })
+
+
+//object.defineProperties
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
+
+https://stackoverflow.com/questions/25517989/why-cant-i-redefine-a-property-in-a-javascript-object

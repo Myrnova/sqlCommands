@@ -22,4 +22,30 @@ INSERT INTO TableName(col1, col2) OUTPUT inserted.ID INTO @outputID
                                              
 -- Insert into a table using a second table or variable as table
 INSERT INTO TableName(col1, col2) SELECT col1, col2 from @variableTable
+
+
+--example using type as variable	
+	
+@TotemID int,
+@ValueID int,
+@guess Guess_TYPE READONLY
+AS 
+
+DECLARE @outputID Table(id int)
+INSERT INTO Game(TotemID, ValueID) OUTPUT inserted.ID INTO @outputID  
+                                             VALUES (@TotemID, @ValueID);
+
+			DECLARE @GameID int = SCOPE_IDENTITY();
+            UPDATE Totem SET update_at=getdate() WHERE ID = @TotemID;
 			
+			INSERT INTO GameGuess(Team1, Draw, Team2, GameID) OUTPUT inserted.ID INTO @outputID SELECT Team1, Draw, Team2, @GameID from @guess
+			
+			SELECT * FROM @outputCodigo
+
+CREATE TYPE [dbo].[Guess_TYPE] AS TABLE(
+	[Team1] [varchar](20) NULL,
+	[Team2] [varchar](20) NULL,
+	[Draw] [varchar](20) NULL,
+	[GameID] [int] NULL
+)
+GO
