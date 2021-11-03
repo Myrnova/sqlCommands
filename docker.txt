@@ -1,14 +1,58 @@
 docker builder prune // remove all build cache
+
 docker rmi -f $(docker images -a -q) // delete all images 
 
-docker stop $(docker ps -a -q) // Stop all running containers
-
 docker rm $(docker ps -a -q)  // Delete all stopped containers
+
+docker rm {id/name} // delete specific container with id or name
 
 docker build . // build dockerfile that has the name Dockerfile
 
 docker build -t nameOfImage -f dockerFileName .
 
-docker run -d -p 81:80 image-name // run image 
+docker run -d -p 81:80 image-name // run image without loging with attaching port 80 of container to 81 of localhost
 
 docker image tag image-id image-name //rename image
+
+docker image ls // show all images
+
+docker volume ls // show all volumes
+
+docker ps //show all container running
+
+docker ps -a //show all container
+
+docker start {id/name} // start container
+
+docker stop {id/name} // stop container
+
+docker stop $(docker ps -a -q) // Stop all running containers
+
+docker exec -it {id/name} /bin/bash  // to access the container -ctrl+d exits this mode
+
+docker logs {id/name} -f //gets log of container and stays on it
+
+docker logs{id/name} // only shows log and exits
+
+docker run --name ignite-challenge-database-queries -e POSTGRES_DB=queries_challenge -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres 
+// run a postgres container without creating a dockerfile
+
+
+--docker-compose
+
+docker-compose.yml
+
+docker-compose up // in real time
+
+docker-compose up -d // run in background
+
+docker-compose down // remove container
+
+docker-compose stop // stop container
+
+docker-compose start // start container
+
+https://stackoverflow.com/questions/58645778/cannot-get-nodemon-ts-node-dev-working-on-dockerized-mean-stack
+
+
+

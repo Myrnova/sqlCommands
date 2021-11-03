@@ -7,6 +7,8 @@ pointer-events: none;
 
 //https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template
 
+//https://openclassrooms.com/en/courses/5295881-create-web-page-layouts-with-css/5369951-set-columns-depending-on-screen-size -- auto set column size
+
 grid-template-columns: repeat(4, 1fr);
 grid-auto-rows: auto;
 

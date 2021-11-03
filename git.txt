@@ -1,4 +1,16 @@
-git checkout -b "branch-name" // create new branch
+git checkout -b branch-name // create new branch
+
+git checkout -b branch-name develop // create new branch from develop
+
+git checkout stash -- . //This will restore all the files in the current directory to their stashed version.
+
+git merge --squash --strategy-option=theirs stash // If there are changes to other files in the working directory that should be kept, here is a less heavy-handed alternative:
+
+git checkout stash -- <paths...> //
+
+git checkout -p stash
+
+git stash push -- <paths...> // stash specific folder
 
 git status
 
