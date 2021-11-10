@@ -1,0 +1,8 @@
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+ssh-add /directory/key
+ssh-agent bash -c 'ssh-add /directory/to/key; git clone repository'
+https://stackoverflow.com/questions/64865626/can-i-permanently-add-ssh-private-key-to-my-user-agent
+
+ip addr show
+sudo ufw disable
