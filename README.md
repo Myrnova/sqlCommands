@@ -1,0 +1,1 @@
+Repository where I save some functions/expressions/logic that I use at daily work or some that I don't use regularly but don't want to forget because they saved me at some point

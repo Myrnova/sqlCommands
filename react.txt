@@ -1,7 +1,13 @@
-
 //force re-render of a component with key
 https://stackoverflow.com/a/62983439/17245106
 https://reactjs.org/docs/hooks-faq.html#is-there-something-like-forceupdate
 
-
 https://stackoverflow.com/questions/59132347/how-to-define-container-size-for-react-testing-library
+
+//transform react.element to string
+
+import { renderToString } from 'react-dom/server'
+
+renderToString(children as ReactElement)
+
+https://stackoverflow.com/questions/51915170/how-to-convert-react-component-to-html-string/51915306

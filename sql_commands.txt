@@ -49,3 +49,6 @@ CREATE TYPE [dbo].[Guess_TYPE] AS TABLE(
 	[GameID] [int] NULL
 )
 GO
+
+
+https://stackoverflow.com/questions/37303779/sql-calculate-percentage-on-countcolumn
