@@ -11,6 +11,8 @@ docker build . // build dockerfile that has the name Dockerfile
 docker build -t nameOfImage -f dockerFileName .
 
 docker run -d -p 81:80 image-name // run image without logging attaching port 80 of container to 81 of localhost
+ 
+docker run --env ENV="production" --name containername -d -p 3000:3000 image-name // set container name and environment variable
 
 docker image tag image-id image-name //rename image
 
