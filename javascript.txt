@@ -83,3 +83,37 @@ https://javascript.info/keys-values-entries
 //regex
 replace(/<a (.*?)>(.*?)<\/a>/g, '<a $1 ><span></span>$2</a>')
 (.*?) is getting everything between <a and >, then the $1 corresponds to replacing the first (.*?) back in. Therefore the second occurrence is then placed where $2 is.
+
+// map with async inside
+const paths = await Promise.all(
+    allContentTypes.contentTypes.map(async ({ slug }) => {
+      const { data: postContentType } = await apolloClient.query<
+        GetPostsContentType,
+        GetPostsContentTypeVariables
+      >({
+        query: GET_POSTS_CONTENT_TYPE,
+        variables: {
+          contentType: `${slug}`,
+          totalPost: 50
+        }
+      })
+      return postContentType.posts.map((post) => ({
+        params: {
+          contentType: slug,
+          slug: post.slug
+        }
+      }))
+    })
+  ).then((data) => data.flat())
+
+
+
+//flat The flat() method creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.
+
+
+const arr2 = [0, 1, 2, [[[3, 4]]]];
+
+console.log(arr2.flat(2));
+// expected output: [0, 1, 2, [3, 4]]
+
+

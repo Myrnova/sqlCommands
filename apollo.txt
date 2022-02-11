@@ -10,13 +10,25 @@ let apolloClient: ApolloClient<NormalizedCacheObject>
 
 const isProd = process.env.NEXT_PUBLIC_ENV === 'production'
 
+//differents endpoints
+const externalLink = new HttpLink({
+  uri: "https://externalurl.com.br"
+})
+
+const internalLink = new HttpLink({
+  uri: process.env.NEXT_PUBLIC_API
+})
+
 function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === 'undefined',
-    link: new HttpLink({
-      uri:  url.com
-    }),
-    cache: new InMemoryCache()
+    link: ApolloLink.split(
+      (operation) => operation.getContext().url === 'internal',
+      internalLink,
+      externalLink
+    ),
+    cache: new InMemoryCache(),
+    connectToDevTools: !isProd
   })
 }
 
