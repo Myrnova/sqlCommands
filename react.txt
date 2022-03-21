@@ -11,3 +11,34 @@ import { renderToString } from 'react-dom/server'
 renderToString(children as ReactElement)
 
 https://stackoverflow.com/questions/51915170/how-to-convert-react-component-to-html-string/51915306
+
+
+// check media size
+
+import { useCallback, useEffect, useState } from 'react'
+
+export const useMatchMaxWidth = (maxWidth: number): boolean => {
+  const [targetReached, setTargetReached] = useState(false)
+
+  const updateTarget = useCallback((e: MediaQueryListEvent) => {
+    if (e.matches) {
+      setTargetReached(true)
+    } else {
+      setTargetReached(false)
+    }
+  }, [])
+
+  useEffect(() => {
+    const media = window.matchMedia(`(max-width: ${maxWidth}px)`)
+    media.addEventListener('change', updateTarget)
+
+    if (media.matches) {
+      setTargetReached(true)
+    }
+
+    return () => media.removeEventListener('change', updateTarget)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  return targetReached
+}

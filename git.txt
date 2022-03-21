@@ -58,3 +58,8 @@ And if you don't want to edit the message when continuing/resuming the merge:
 git push -f origin branch_name
 
 https://ohshitgit.com/
+
+//How to squash commits in current branch
+//https://stackoverflow.com/questions/6934752/combining-multiple-commits-before-pushing-in-git
+git rebase -i 
+// -i opens the interactive panel for a better experience
