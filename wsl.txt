@@ -6,3 +6,5 @@ https://stackoverflow.com/questions/64865626/can-i-permanently-add-ssh-private-k
 
 ip addr show
 sudo ufw disable
+
+\\wsl$\
