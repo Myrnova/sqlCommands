@@ -36,8 +36,14 @@ docker logs {id/name} -f //gets log of container and stays on it
 
 docker logs{id/name} // only shows log and exits
 
+docker container ls //show all containers
+
+docker container attach {id/name} // attach to container
+
 docker run --name ignite-challenge-database-queries -e POSTGRES_DB=queries_challenge -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres 
 // run a postgres container without creating a dockerfile
+
+
 
 
 --docker-compose

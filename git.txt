@@ -63,3 +63,11 @@ https://ohshitgit.com/
 //https://stackoverflow.com/questions/6934752/combining-multiple-commits-before-pushing-in-git
 git rebase -i 
 // -i opens the interactive panel for a better experience
+
+//delete commit
+git checkout my-pull-request-branch
+git rebase -i HEAD~n //where n is the number of last commits you want to include in interactive rebase.
+Replace pick with drop for commits you want to discard.
+Save and exit.
+git push --force
+//https://stackoverflow.com/questions/36168839/how-to-remove-commits-from-a-pull-request

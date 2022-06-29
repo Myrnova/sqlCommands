@@ -4,3 +4,7 @@ cat > myfile.txt
 //remove unused packages
 sudo apt-get clean
 sudo apt-get autoremove
+
+
+
+sudo service docker start
