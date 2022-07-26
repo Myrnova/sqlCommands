@@ -1,0 +1,4 @@
+when needing to assign an object, use beforeAll because 
+the describe calls are executed right away before actually runs the test suite. That's how it figures out the set of tests you've declared.
+
+https://stackoverflow.com/questions/21470349/variable-in-outer-describe-block-is-undefined-when-accessing-in-inner-describe-b

@@ -28,6 +28,8 @@ git branch -D "branch-name"  // delete branch
 
 git cherry-pick <hash of commit> // Cherry pick the commit you want
 
+git push --force-with-lease // force the branch but it will show you any problems or overwrite when you do it
+
 git fetch -p //the -p or --prune argument will update the local database of remote branches.
 git remote prune origin
 
@@ -69,5 +71,5 @@ git checkout my-pull-request-branch
 git rebase -i HEAD~n //where n is the number of last commits you want to include in interactive rebase.
 Replace pick with drop for commits you want to discard.
 Save and exit.
-git push --force
+git push --force-with-lease
 //https://stackoverflow.com/questions/36168839/how-to-remove-commits-from-a-pull-request
