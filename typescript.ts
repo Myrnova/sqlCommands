@@ -3,7 +3,7 @@
 const identity = <Type>(value: Type): Type => value
 
 const number = identity<number>(2)
-// const falha = identity<number>("2") // não aceita pois o tipo esta errado
+// const falha = identity<number>("2") // won't accept because we are passing an argument with different type than specified
 
 
 const object = identity<{ a: number, b: boolean}>({
@@ -14,15 +14,15 @@ const object = identity<{ a: number, b: boolean}>({
 
 //? generic-extends
 
-const identityWithLength = <Type extends { length: number}>(value: Type) {
+const identityWithLength = <Type extends { length: number }>(value: Type) => {
   console.log(value.length)
   return value
 }
 
 
-// identityWithLength(10) // não tem length
+// identityWithLength(10) // number doesn't have length method
 
-identityWithLength('adsa') // string tem a função length
+identityWithLength('adsa') // string has a length method
 
 identityWithLength({ length: 10 })
 
@@ -38,7 +38,7 @@ getProperty({
   age: 25
 }, 'name')
 
-// getProperty({ name: 'Test'}, 'dasdsa') // erro porque dasdsa nao existe no type { name: 'Test'} 
+// getProperty({ name: 'Test'}, 'dasdsa') // error because 'dasdas' doesn't exist in type { name: 'Test' }
 
 
 //? create-types

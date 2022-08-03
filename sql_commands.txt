@@ -52,3 +52,37 @@ GO
 
 
 https://stackoverflow.com/questions/37303779/sql-calculate-percentage-on-countcolumn
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------
+
+POSTGRESQL
+
+
+USING in JOIN!
+A clause of the form USING ( a, b, ... ) is shorthand for ON left_table.a = right_table.a AND left_table.b = right_table.b .... Also, USING implies that only one of each pair of equivalent columns will be included in the join output, not both.
+
+select * from Table1 inner join Table2 using(id, name) 
+
+  -------- can be done with ON as the following -------- 
+
+select * from Table1 inner join Table2 ON table1.id = table2.id AND table1.name = table2.name
+
+	
+STATIC VALUES -- https://www.postgresql.org/docs/current/queries-values.html
+with company_ids as (
+      select * from (
+        values
+        ${ids}
+      ) as t(id)
+)
