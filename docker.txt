@@ -43,7 +43,7 @@ docker container attach {id/name} // attach to container
 docker run --name ignite-challenge-database-queries -e POSTGRES_DB=queries_challenge -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres 
 // run a postgres container without creating a dockerfile
 
-
+docker inspect containerID | grep IPAddress // show host of the container
 
 
 --docker-compose
@@ -59,6 +59,11 @@ docker-compose down // remove container
 docker-compose stop // stop container
 
 docker-compose start // start container
+
+docker-compose exec namecontainer sh // to connect to a container and run commands 
+[
+  hostname -i // gets the host of the container
+]
 
 https://stackoverflow.com/questions/58645778/cannot-get-nodemon-ts-node-dev-working-on-dockerized-mean-stack
 
