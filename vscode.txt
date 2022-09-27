@@ -1,3 +1,14 @@
+ 
+alt+shift+i - put cursor in the end of all select lines
+ctrl+k z - zen mode
+
+select a code, ctrl+c it and ctrl+k+c to compare the clipboard item with the one openned in the IDE
+ctrl+p + @ - show all elements inside the file
+ctrl+p + @: - organize the elements inside the file by type
+ctrl+shift+. - open the IDE breadcrumb 
+f2 selecting a name will show a rename box and change all occurrency in the file
+ctrl+shift+l - will select all occurrency of the same name and change with the new typed one
+
 
  
 theme: dracula
@@ -206,3 +217,6 @@ theme: dracula
         "listFilterWidget.noMatchesOutline": "#E96379"
 
  "editor.fontFamily": "JetBrains Mono",
+ 
+ 
+ 

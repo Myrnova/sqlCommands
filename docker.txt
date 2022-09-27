@@ -46,6 +46,23 @@ docker run --name ignite-challenge-database-queries -e POSTGRES_DB=queries_chall
 docker inspect containerID | grep IPAddress // show host of the container
 
 
+//copy file from a container to local
+
+$ docker cp <containerId>:/file/path/in/container/file /host/local/path/file
+
+# Copy /opt/app/app.log from the container d362659da5fc to the current local working directory
+$ docker cp d362659da5fc:/opt/app/app.log .
+
+# Copy /opt/app/app.log from the container d362659da5fc to local host, /home/mkyong/backup/app.log
+$ docker cp d362659da5fc:/opt/app/app.log /home/mkyong/backup/
+
+# Copy /opt/app/app.log from the container to local host, renamed to /home/mkyong/backup/app.bk.20200511.log
+$ docker cp d362659da5fc:/opt/app/app.log /home/mkyong/backup/app.bk.20200511.log
+
+# Copy files from folder /opt/app/ (container) to local host /home/mkyong/backup2/
+$ docker cp d362659da5fc:/opt/app/ /home/mkyong/backup2/
+
+
 --docker-compose
 
 docker-compose.yml

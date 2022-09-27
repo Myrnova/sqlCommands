@@ -8,3 +8,6 @@ sudo apt-get autoremove
 
 
 sudo service docker start
+
+
+pwd //see current path
