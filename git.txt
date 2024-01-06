@@ -73,3 +73,13 @@ Replace pick with drop for commits you want to discard.
 Save and exit.
 git push --force-with-lease
 //https://stackoverflow.com/questions/36168839/how-to-remove-commits-from-a-pull-request
+
+
+// alias 
+git config --global alias.ciane 'commit --amend --no-edit'
+git config --global alias.rbi 'git rebase -p --interactive' 
+git config --global alias.rbc 'git rebase --continue'    
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status

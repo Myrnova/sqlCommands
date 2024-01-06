@@ -1,0 +1,89 @@
+---- $Profile
+# theme
+
+Import-Module posh-git
+
+oh-my-posh init pwsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/spaceship.omp.json' | Invoke-Expression
+
+# alias
+function projetos { set-location "D:\Documentos\Projetos" }
+new-alias cdt projetos
+
+# tab completion
+Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
+
+Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -PredictionViewStyle ListView
+# git
+
+function ga {
+	git add $args
+}
+function gaa {
+	git add --all
+}
+function gb {
+	git branch
+}
+function gcb {
+	git checkout -b
+}
+function gcm {
+	git checkout master
+}
+function gcmsg {
+	git commit -m $args
+}
+function gco {
+	git checkout $args
+}
+function gd {
+	git diff $args
+}
+function gdca {
+	git diff --cached
+}
+function gf {
+	git fetch $args
+}
+function gfa {
+	git fetch --all --prune
+}
+function gfo {
+	git fetch origin
+}
+function ggpull {
+    $branch= &git rev-parse --abbrev-ref HEAD 
+	git pull origin $branch $args
+}
+function ggpush {
+    $branch= &git rev-parse --abbrev-ref HEAD 
+	git push origin $branch $args
+}
+function gm {
+	git merge $args
+}
+function gmom {
+	git merge origin/master
+}
+function gp {
+	git push $args
+}
+function grh {
+	git reset HEAD
+}
+function grhh {
+	git reset HEAD --hard
+}
+function grv {
+	git remote -v
+}
+function gss {
+	git status -s
+}
+
+
+--------- auto complete
+
+Install-Module -Name Z -Force
+Install-Module -Name PSReadLine -AllowPrerelease -Force -SkipPublisherCheck
