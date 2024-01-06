@@ -42,3 +42,12 @@ export const useMatchMaxWidth = (maxWidth: number): boolean => {
 
   return targetReached
 }
+
+
+
+// passing data from child to parent using function
+https://bobbyhadz.com/blog/react-pass-data-from-child-to-parent
+
+
+// memoizing with useCallback and useMemo
+https://kinsta.com/pt/blog/usecallback-react/
