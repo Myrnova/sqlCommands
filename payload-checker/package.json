@@ -1,0 +1,16 @@
+{
+  "name": "payload-checker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "checker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parser": "^3.0.0",
+    "node-xlsx": "^0.23.0",
+    "ramda": "^0.29.1"
+  }
+}
