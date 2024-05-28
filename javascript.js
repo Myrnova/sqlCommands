@@ -120,3 +120,33 @@ const tasks = uniq(values.taskList
   .filter((value) => !Number.isNaN(value))
   .filter(Boolean) // keep only true elements
   .map(Number)) // convert itens to number equivalent to .map((str, ind, arr) => Number(str, ind, arr));
+
+
+
+
+//* lib proxyrequire - Easily stub module references in node.js, FuseBox or webpack
+
+// index.js
+
+const { getConfig, publishConfig } = require('./config')
+const { isSelfService } = require('./services')
+const { buildPayloadByEventType } = require('./payload')
+
+module.exports = {
+  function
+}
+
+// test.js
+
+const { function } = proxyquire('../../index.js', {
+  './config': {
+    getConfig: getConfigStub,
+    publishConfig: publishConfigStub,
+  },
+  './services': {
+    isSelfService: isSelfServiceStub,
+  },
+  './payload': {
+    buildPayloadByEventType: buildPayloadByEventTypeStub,
+  },
+})
