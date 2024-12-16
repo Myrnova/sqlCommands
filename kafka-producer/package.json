@@ -1,0 +1,24 @@
+{
+  "name": "kafka-producer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": "14.8.x"
+  },
+  "scripts": {
+    "dev": "clear; node src/main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "arg": "^5.0.2",
+    "axios": "^1.7.7",
+    "dotenv": "^16.0.3",
+    "fs": "^0.0.1-security",
+    "kafkajs": "^2.2.3",
+    "ramda": "^0.28.0",
+    "ulid": "^2.3.0"
+  }
+}
